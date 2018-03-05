@@ -2,7 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, NavLink, Route } from 'react-router-dom';
-import HomePage from './HomePage';
+import HomePage from './home/HomePage';
+import EventDetailsPage from './event-details/EventDetailsPage';
+
 import FuelSavingsPage from './containers/FuelSavingsPage';
 import AboutPage from './AboutPage';
 import NotFoundPage from './NotFoundPage';
@@ -27,6 +29,8 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/fuel-savings" component={FuelSavingsPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path='/event' component={EventDetailsPage} />
+          <Route path='/event/:id' component={EventDetailsPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import TR from '../common/Table/TR';
-import TD from '../common/Table/TD';
+import TR from '../common/table/TR';
+import TD from '../common/table/TD';
 
 
 const EventTableRow = ({event, selectable}) => {

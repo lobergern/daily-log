@@ -1,6 +1,5 @@
 import React from 'react';
-import EventTable from '../common/EventTable';
-
+import EventTable from './EventTable';
 
 const HomePage = () => {
   return (

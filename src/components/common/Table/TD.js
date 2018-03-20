@@ -8,7 +8,7 @@ const TD = ({children, selectable}) => {
 }
 
 TD.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   selectable: PropTypes.bool
 };
 

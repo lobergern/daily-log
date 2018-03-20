@@ -1,16 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as eventActions from '../../actions/eventActions'
 import EventTable from './EventTable';
+
 class HomePage extends React.Component {
   constructor(props, context) {
     super(props, context);
-
-    this.state = {
-      events: [
-        {id: 0, name: 'Test1', startTime: '12:32', endTime: '4:32', notes: 'note'},
-        {id: 1, name: 'Test2', startTime: '1:42', endTime: '3:31', notes: 'note'},
-        {id: 2, name: 'Test3', startTime: '5:32', endTime: '5:34', notes: 'note'}
-      ]
-    };
   }
 
   render() {
@@ -18,11 +16,29 @@ class HomePage extends React.Component {
       <div>
         <h1>Daily Log</h1>
         <EventTable
-          events={this.state.events}
+          events={this.props.events}
         />
+        <Link to="/event" className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Add Event</Link>
       </div>
     );
   }
 }
 
-export default HomePage;
+HomePage.propTypes = {
+  events: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired
+};
+
+function mapStateToProps(state) {
+  return {
+    events: state.events
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(eventActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

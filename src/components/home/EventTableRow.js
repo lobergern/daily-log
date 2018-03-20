@@ -9,8 +9,7 @@ const EventTableRow = ({event, selectable}) => {
   return (
     <TR selectable={selectable}>
       <TD><Link to={`event/${event.id}`}>{event.name}</Link></TD>
-      <TD>{`/event/${event.startTime}`}</TD>
-      <TD>{event.endTime}</TD>
+      <TD>{event.time}</TD>
       <TD>{event.notes}</TD>
     </TR>
   );

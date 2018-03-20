@@ -9,13 +9,12 @@ import EventTableRow from './EventTableRow';
 const EventTable = ({events}) => {
   return (
     <Table
-      selectable={true}
+      selectable={false}
       headerRow={
         <TR>
           <TH>Event</TH>
-          <TH>StarTime</TH>
-          <TH>End Time</TH>
-          <TH>Event</TH>
+          <TH>Time</TH>
+          <TH>Notes</TH>
         </TR>
       }
       // TODO Refactor?: Create <TBODY> component instead of passing as prop to make

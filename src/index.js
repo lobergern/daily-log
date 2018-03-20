@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
+import { loadEvents } from './actions/eventActions'
 
 // material design (icons from cdn in index.ejs)
 import '../node_modules/material-design-lite/material.min.css';
@@ -14,6 +15,7 @@ import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS fil
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 
 const store = configureStore();
+store.dispatch(loadEvents());
 
 render(
   <AppContainer>
